@@ -1,7 +1,7 @@
 const express = require("express")
 const Router = express.Router()
 const { User } = require("./models")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 
 const Authorization = async (req, res, next) => {
