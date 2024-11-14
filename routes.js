@@ -161,7 +161,7 @@ Router.post("/post/:userId", Authorization, async (req, res) => {
             )
             res.status(200).json({
                 status: "success",
-                data: "Task added successfully"
+                message: "recipe added successfully"
             })
         } else {
             res.status(400).json({
@@ -195,7 +195,7 @@ Router.put("/put/:userId/:recipeId", Authorization, async (req, res) => {
                 })
             res.status(200).json({
                 status: "success",
-                data: "Task updated successfully"
+                message: "Task updated successfully"
             })
         } else {
             res.status(400).json({
@@ -223,12 +223,12 @@ Router.delete("/delete/:userId/:recipeId", Authorization, async (req, res) => {
                 )
                 res.status(200).json({
                     status: "success",
-                    data: "Task deleted successfully"
+                    message: "recipe deleted"
                 })
             } else
                 res.status(400).json({
                     status: "failure",
-                    message: "Task Not found"
+                    message: "recipe Not found"
                 })
         } else {
             res.status(400).json({
