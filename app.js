@@ -14,16 +14,4 @@ const connectToDB = require('./mongodbConnection')
 connectToDB()
 app.use("/user", Router)
 app.use("/recipe", Router)
-app.use(async (req,res, next)=>{
-    // const error = new Error("Not found")
-    // error.status = 404
-    next(createError.NotFound())
-})
-app.use((err, req,res, next)=>{
-    res.status(err.status || 500)
-    res.send({
-        status: err.status || 500,
-        message: err.message
-    })
-})
 app.listen(PORT, () => console.log(`server is runing on http://localhost:${PORT}`))
